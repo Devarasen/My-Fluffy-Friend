@@ -6,4 +6,6 @@ Pet Adoption Platform: Build a platform that connects animal shelters and rescue
 
 ##
 
+TEST
+
 ###
