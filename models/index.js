@@ -12,5 +12,4 @@ Project.belongsTo(User, {
 
 module.exports = { User, Project };
 
-// Why the fuck isn't this working?!?
 
