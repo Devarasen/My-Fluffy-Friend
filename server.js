@@ -1,17 +1,19 @@
-const express = require("express");
-const routes = require("./routes");
-// import sequelize connection
-const sequelize = require("./config/connection");
+const express = require('express');
+const exphbs = require('express-handlebars');
+const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Set up Handlebars as the view engine
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'views'));
 
-app.use(routes);
+app.get('/', (req, res) => {
+    res.render('home'); // Render the view using the default layout file (main.handlebars)
+});
 
-// sync sequelize models to the database, then turn on the server
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log("Now listening"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
