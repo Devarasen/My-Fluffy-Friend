@@ -63,6 +63,6 @@ const petData = [
     },
 ];
 
-const seedPets = () => Pet.bulkCreate(productData);
+const seedPets = () => Pet.bulkCreate(petData);
 
 module.exports= seedPets;
