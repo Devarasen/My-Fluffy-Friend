@@ -21,7 +21,10 @@ AdoptionCenter.init(
         },
         pet_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            references: {
+                model: 'pet',
+                key: 'id'
+            },
         },
     },
     {
@@ -29,7 +32,7 @@ AdoptionCenter.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'adoption_center',
+        modelName: 'adoption-center',
     }
 );
 
