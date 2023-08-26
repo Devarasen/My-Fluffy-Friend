@@ -1,28 +1,38 @@
-const User = require('./User');
+// const User = require('./User');
 const Pet = require('./Pet'); 
 const Category = require('./Category'); 
 const AdoptionDate = require('./AdoptionDate'); 
 const AdoptionCenter = require('./AdoptionCenter'); 
 
-User.hasMany(Pet, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
-});
-
-Pet.belongsTo(User, {
-  foreignKey: 'user_id'
-});
-
 Pet.belongsTo(Category, {
   foreignKey: 'category_id'
 });
 
-Pet.hasOne(AdoptionDate, {
+Category.hasMany(Pet, {
+  foreignKey: 'category_id',
+  onDelete: 'CASCADE'
+});
+
+Pet.hasMany(AdoptionDate, {
   foreignKey: 'pet_id'
 });
 
-Pet.hasOne(AdoptionCenter, {
+Pet.hasMany(AdoptionCenter, {
   foreignKey: 'pet_id'
 });
 
-module.exports = { User, Pet, Category, AdoptionDate, AdoptionCenter };
+AdoptionCenter.belongsTo(Pet, { 
+  foreignKey: 'pet_id'
+});
+
+AdoptionDate.belongsTo(Pet, { 
+  foreignKey: 'pet_id'
+});
+
+AdoptionDate.belongsTo(AdoptionCenter, { 
+  foreignKey: 'adoption_center_id'
+});
+
+
+
+module.exports = { Pet, Category, AdoptionDate, AdoptionCenter };
