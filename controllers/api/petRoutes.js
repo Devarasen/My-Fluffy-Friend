@@ -5,6 +5,7 @@ router.get("/", async (req, res) => {
   try {
     const petData = await Pet.findAll();
     res.status(200).json(petData);
+
   } catch (error) {
     res.status(500).json(error);
   }
