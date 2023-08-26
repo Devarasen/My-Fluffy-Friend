@@ -4,6 +4,10 @@ const path = require("path");
 
 router.use("/api", apiRoutes);
 
+router.get("/", async (req, res) => {
+  return res.render("home");
+});
+
 router.use((req, res) => {
   res.send("<h1>Wrong Route!</h1>");
 });
