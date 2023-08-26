@@ -23,6 +23,6 @@ const adoptionCenterData = [
     },
 ];
 
-const seedAdoptionCenters = () => Category.bulkCreate(adoptionCenterData);
+const seedAdoptionCenters = () => AdoptionCenter.bulkCreate(adoptionCenterData);
 
 module.exports = seedAdoptionCenters;
