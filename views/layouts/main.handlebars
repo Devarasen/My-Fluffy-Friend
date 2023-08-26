@@ -4,12 +4,16 @@
     <title>{{pageTitle}}</title>
 </head>
 <body>
-    
+    <header>
+        {{> header}} <!-- Include the header partial -->
+    </header>
 
     <main>
         {{{body}}} <!-- Render the content of the view -->
     </main>
 
- 
+    <footer>
+        {{> footer}} <!-- Include the footer partial -->
+    </footer>
 </body>
 </html>
