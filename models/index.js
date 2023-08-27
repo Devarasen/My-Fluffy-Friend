@@ -14,7 +14,8 @@ Category.hasMany(Pet, {
 });
 
 AdoptionCenter.hasMany(Pet, {
-  foreignKey: 'adoption_center_id'
+  foreignKey: 'adoption_center_id',
+  onDelete: 'CASCADE'
 });
 
 Pet.belongsTo(AdoptionCenter, {

@@ -25,6 +25,7 @@ AdoptionCenter.init(
                 model: 'pet',
                 key: 'id'
             },
+            onDelete: 'CASCADE',
         },
     },
     {
