@@ -30,6 +30,14 @@ Pet.init(
                 key: 'id',
             },
         },
+        adoption_center_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'adoption_center',
+                key: 'id'
+            },
+            onDelete: 'CASCADE',
+        },
     },
     {
         sequelize,
