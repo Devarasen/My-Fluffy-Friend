@@ -32,7 +32,7 @@ AdoptionCenter.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'adoption-center',
+        modelName: 'adoption_center',
     }
 );
 
