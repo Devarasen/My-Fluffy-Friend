@@ -13,11 +13,11 @@ const seedAll = async () => {
   await seedCategories();
   console.log('\n----- CATEGORIES SEEDED -----\n');
 
-  await seedPets();
-  console.log('\n----- PETS SEEDED -----\n');
-
   await seedAdoptionCenters();
   console.log('\n----- ADOPTION CENTERS SEEDED -----\n');
+
+  await seedPets();
+  console.log('\n----- PETS SEEDED -----\n');
 
   process.exit(0);
 };

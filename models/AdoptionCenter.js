@@ -19,14 +19,14 @@ AdoptionCenter.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        pet_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'pet',
-                key: 'id'
-            },
-            onDelete: 'CASCADE',
-        },
+        // pet_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'pet',
+        //         key: 'id'
+        //     },
+        //     onDelete: 'CASCADE',
+        // },
     },
     {
         sequelize,
