@@ -19,20 +19,21 @@ AdoptionCenter.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        pet_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'pet',
-                key: 'id'
-            },
-        },
+        // pet_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'pet',
+        //         key: 'id'
+        //     },
+        //     onDelete: 'CASCADE',
+        // },
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'adoption-center',
+        modelName: 'adoption_center',
     }
 );
 
