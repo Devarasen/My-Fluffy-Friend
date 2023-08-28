@@ -1,22 +1,30 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const path = require("path");
-const routes = require("./controllers");
-
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.use(routes);
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Set up Handlebars as the view engine
-app.engine("handlebars", exphbs());
+// View engine setup
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+    layoutsDir: path.join(__dirname, "views/layouts"),
+    partialsDir: path.join(__dirname, "views/partials"),
+  })
+);
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 
-app.get("/", (req, res) => {
-  res.render("home"); // Render the view using the default layout file (main.handlebars)
-});
+// Routes
+const petRoutes = require("./controllers/api/petRoutes"); // Adjust the path as needed
+app.use("/pets", petRoutes);
 
-const PORT = process.env.PORT || 3000;
+// Start the server
 app.listen(PORT, () => {
-  console.log("Server listening on: http://localhost:" + PORT);
+  console.log(`Server is running on port ${PORT}`);
 });

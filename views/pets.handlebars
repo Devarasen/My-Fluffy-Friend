@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Pets</title>
+</head>
+<body>
+  <h1>All Pets</h1>
+  <ul>
+    {{#each petData}}
+      <li><a href="/pet/{{id}}">{{name}}</a></li>
+    {{/each}}
+  </ul>
+</body>
+</html>
