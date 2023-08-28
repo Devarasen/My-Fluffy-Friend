@@ -1,24 +1,31 @@
-const router = require("express").Router();
-const { Pet } = require("../../models");
+const express = require("express");
+const router = express.Router();
+const { Pet, Category, AdoptionCenter } = require("../../models");
 
 router.get("/", async (req, res) => {
   try {
-    const petData = await Pet.findAll();
-    res.status(200).json(petData);
+    const petData = await Pet.findAll({
+      include: [Category, AdoptionCenter],
+    });
+    const formattedPetData = petData.map(pet => pet.get({ plain: true }));
+    res.render("pets", { petData: formattedPetData }); 
 
   } catch (error) {
     res.status(500).json(error);
   }
 });
 
-router.get("/", async (req, res) => {
-  const petData = await Pet.findByPk();
-  res.render("main", { petData });
-});
-
 router.get("/:id", async (req, res) => {
-  const petData = await Pet.findByPk(req.params.id);
-  res.status(200).json(petData);
+  try {
+    const petData = await Pet.findByPk(req.params.id, {
+      include: [Category, AdoptionCenter],
+    });
+    const formattedPetData = petData.get({ plain: true });
+    res.render("pet", { petData: formattedPetData }); 
+
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
 
 module.exports = router;

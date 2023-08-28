@@ -4,13 +4,17 @@
     <title>{{pageTitle}}</title>
 </head>
 <body>
-    
+    <header>
+        {{> header}} <!-- Include the header partial -->
+    </header>
 
     <main>
         {{{body}}} <!-- Render the content of the view -->
         {{{ petData }}}
     </main>
 
- 
+    <footer>
+        {{> footer}} <!-- Include the footer partial -->
+    </footer>
 </body>
 </html>
