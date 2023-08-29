@@ -8,20 +8,18 @@ const routes = require("./controllers");
 
 // Multer
 
-const multer = require('multer');
+const multer = require("multer");
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'images')
+    cb(null, "images");
   },
   filename: (req, file, cb) => {
-    console.log(file)
-    cb(null, Date.now() + path.extname(file.originalname))
-  }
-})
+    console.log(file);
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
 
-const upload = multer({storage: storage})
-
-
+const upload = multer({ storage: storage });
 
 // Middleware
 app.use(express.json());
@@ -81,8 +79,10 @@ console.log("3001 is the port");
 
 // Code for handlebars
 
-{/* <h1>Upload Image</h1>
+{
+  /* <h1>Upload Image</h1>
 <form method="POST" action="/upload" enctype="multipart/form-data">
   <input type="file name="image>
   <input type="submit">  
-</form> */}
+</form> */
+}

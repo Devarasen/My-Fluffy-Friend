@@ -4,9 +4,10 @@
   <h1>{{petData.pet_name}}</h1>
   <p>Species: {{petData.category.category_name}}</p>
   <p>Breed: {{petData.breed}}</p>
-  <P>Adoption Centre: {{petData.center_name}}</P>
+  <P>Adoption Centre: {{petData.adoption_center.center_name}}</P>
+  <P>Centre Address: {{petData.adoption_center.address}}</P>
   <p>Age: {{petData.age}}</p>
-  <img src="{{petData.image}}" alt="{{petData.name}}" />
+  <img src="{{petData.image}}" alt="{{petData.pet_name}}" />
 
 </body>
 
