@@ -3,6 +3,8 @@ const exphbs = require("express-handlebars");
 const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
+const routes = require("./controllers");
+app.use(routes);
 
 // Middleware
 app.use(express.json());
@@ -21,8 +23,8 @@ app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 
 // Routes
-const petRoutes = require("./controllers/api/petRoutes"); // Adjust the path as needed
-app.use("/pets", petRoutes);
+// const petRoutes = require("./controllers/api/petRoutes"); // Adjust the path as needed
+// app.use("/pets", petRoutes);
 
 // Start the server
 app.listen(PORT, () => {
