@@ -6,6 +6,23 @@ const PORT = process.env.PORT || 3000;
 const routes = require("./controllers");
 // const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
+// Multer
+
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'images')
+  },
+  filename: (req, file, cb) => {
+    console.log(file)
+    cb(null, Date.now() + path.extname(file.originalname))
+  }
+})
+
+const upload = multer({storage: storage})
+
+
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -46,3 +63,26 @@ app.set("views", path.join(__dirname, "views"));
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+// Multer
+
+app.set("view engine");
+
+app.get("/upload", (req, res) => {
+  res.render("upload");
+});
+
+app.post("/upload", upload.single("image"), (req, res) => {
+  res.send("image uploade");
+});
+
+app.listen(3001);
+console.log("3001 is the port");
+
+// Code for handlebars
+
+{/* <h1>Upload Image</h1>
+<form method="POST" action="/upload" enctype="multipart/form-data">
+  <input type="file name="image>
+  <input type="submit">  
+</form> */}
