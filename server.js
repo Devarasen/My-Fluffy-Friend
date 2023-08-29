@@ -4,29 +4,29 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const routes = require("./controllers");
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
+// const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Sets up session for cookies and connect to our Sequelize db
-const sess = {
-  secret: "Super secret secret",
-  cookie: {
-    maxAge: 60 * 60 * 1000,
-    httpOnly: true,
-    secure: false,
-    sameSite: "strict",
-  },
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize,
-  }),
-};
+// const sess = {
+//   secret: "Super secret secret",
+//   cookie: {
+//     maxAge: 60 * 60 * 1000,
+//     httpOnly: true,
+//     secure: false,
+//     sameSite: "strict",
+//   },
+//   resave: false,
+//   saveUninitialized: true,
+//   store: new SequelizeStore({
+//     db: sequelize,
+//   }),
+// };
 
-app.use(session(sess));
+// app.use(session(sess));
 
 app.use(routes);
 
@@ -41,10 +41,6 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
-
-// Routes
-// const petRoutes = require("./controllers/api/petRoutes"); // Adjust the path as needed
-// app.use("/pets", petRoutes);
 
 // Start the server
 app.listen(PORT, () => {

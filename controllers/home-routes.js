@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Pet, Category, AdoptionCenter } = require("/../models");
+const { Pet, Category, AdoptionCenter } = require("../models");
 
 router.get("/", async (req, res) => {
   return res.render("home");
