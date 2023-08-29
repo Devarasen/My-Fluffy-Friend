@@ -1,26 +1,4 @@
-header,
-/* .add class */ :not(:last-child) {
-  border-bottom: 1px solid #7E9AA8;
-  background-color: #FFFFFF; 
-}
-
-/* .add class */ {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1B2845; 
-  text-decoration: none;
-  font-size: 100%;
-}
-
-/* .add class */ {
-  color: #3A5276; 
-  text-decoration: underline;
-}
-
-/* .add class */ {
-  color: #8B572A; 
-  font-weight: bold;
-  margin-left: -5px;
+.expand-on-hover:hover {
+  transform: scale(1.1); 
+  transition: transform 0.2s ease-in-out; 
 }
