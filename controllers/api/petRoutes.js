@@ -7,9 +7,8 @@ router.get("/", async (req, res) => {
     const petData = await Pet.findAll({
       include: [Category, AdoptionCenter],
     });
-    const formattedPetData = petData.map(pet => pet.get({ plain: true }));
-    res.render("pets", { petData: formattedPetData }); 
-
+    const formattedPetData = petData.map((pet) => pet.get({ plain: true }));
+    res.status(200).json(formattedPetData);
   } catch (error) {
     res.status(500).json(error);
   }
@@ -21,8 +20,7 @@ router.get("/:id", async (req, res) => {
       include: [Category, AdoptionCenter],
     });
     const formattedPetData = petData.get({ plain: true });
-    res.render("pet", { petData: formattedPetData }); 
-
+    res.status(200).json(formattedPetData);
   } catch (error) {
     res.status(500).json(error);
   }
