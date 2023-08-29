@@ -22,6 +22,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Middleware
+app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -57,14 +58,7 @@ app.engine(
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
-
 // Multer
-
-app.set("view engine");
 
 app.get("/upload", (req, res) => {
   res.render("upload");
@@ -74,8 +68,10 @@ app.post("/upload", upload.single("image"), (req, res) => {
   res.send("image uploade");
 });
 
-app.listen(3001);
-console.log("3001 is the port");
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 // Code for handlebars
 
