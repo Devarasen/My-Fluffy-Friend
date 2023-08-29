@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets available</title>
+    <style>
+        /* text */
+        .text-lg {
+            font-size: 35px; 
+        }
+        /* style for making text bold */
+        .bold-text {
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>{{petData.pet_name}}</h1>
+        <h1 class="text-lg"><strong>{{petData.pet_name}}</strong></h1>
         <div class="row">
             <div class="col-md-6">
-                <p>Species: {{petData.category.category_name}}</p>
-                <p>Breed: {{petData.breed}}</p>
-                <P>Adoption Centre: {{petData.center_name}}</P>
-                <p>Age: {{petData.age}}</p>
+                <p class="text-lg">Species: {{petData.category.category_name}}</p>
+                <p class="text-lg">Breed: {{petData.breed}}</p>
+                <P class="text-lg">Adoption Centre: {{petData.center_name}}</P>
+                <p class="text-lg">Age: {{petData.age}}</p>
             </div>
             <div class="col-md-6">
                 <img src="{{petData.image}}" alt="{{petData.name}}" class="img-fluid" style="max-height: 500px;">
