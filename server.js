@@ -26,6 +26,7 @@ const upload = multer({storage: storage})
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"))
 
 // Sets up session for cookies and connect to our Sequelize db
 // const sess = {
@@ -76,8 +77,8 @@ app.post("/upload", upload.single("image"), (req, res) => {
   res.send("image uploade");
 });
 
-app.listen(3001);
-console.log("3001 is the port");
+// app.listen(3001);
+// console.log("3001 is the port");
 
 // Code for handlebars
 
@@ -86,3 +87,5 @@ console.log("3001 is the port");
   <input type="file name="image>
   <input type="submit">  
 </form> */}
+
+
