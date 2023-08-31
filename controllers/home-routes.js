@@ -43,6 +43,7 @@ router.get("/petRoutes/:id", async (req, res) => {
       include: [Category, AdoptionCenter],
     });
     const formattedPetData = petData.get({ plain: true });
+    console.log("check", formattedPetData);
     res.render("pet", { petData: formattedPetData });
   } catch (error) {
     res.status(500).json(error);
