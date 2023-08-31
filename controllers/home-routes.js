@@ -2,6 +2,8 @@ const router = require("express").Router();
 const { Pet, Category, AdoptionCenter } = require("../models");
 
 router.get("/", async (req, res) => {
+  console.log("Accessed home route");
+  console.log(req.session);
   return res.render("home", { logged_in: req.session.logged_in });
 });
 
