@@ -19,6 +19,11 @@ router.get("/contact", async (req, res) => {
   return res.render("contact");
 });
 
+router.get("/about", async (req, res) => {
+  return res.render("about");
+});
+
+
 
 router.get("/petRoutes", async (req, res) => {
   try {
