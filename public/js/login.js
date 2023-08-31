@@ -14,7 +14,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page (make sure the path is correct)
+      // If successful, redirect the browser to the home page
       document.location.replace("/home");
     } else {
       alert(response.statusText);
@@ -38,8 +38,8 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page (make sure the path is correct)
-      document.location.replace("/profile");
+      // If successful, redirect the browser to the home page
+      document.location.replace("/home");
     } else {
       alert(response.statusText);
     }
