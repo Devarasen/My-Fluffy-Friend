@@ -13,6 +13,11 @@ router.get("/post-adoption", async (req, res) => {
   return res.render("postAdoption");
 });
 
+router.get("/contact", async (req, res) => {
+  return res.render("contact");
+});
+
+
 router.get("/petRoutes", async (req, res) => {
   try {
     const petData = await Pet.findAll({
