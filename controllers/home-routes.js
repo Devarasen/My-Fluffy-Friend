@@ -1,19 +1,16 @@
 const router = require("express").Router();
 const { Pet, Category, AdoptionCenter } = require("../models");
 
-
 router.get("/", async (req, res) => {
-  return res.render("home");
+  return res.render("home", { logged_in: req.session.logged_in });
 });
-
 
 router.get("/login", async (req, res) => {
   return res.render("login");
 });
 
-
 router.get("/post-adoption", async (req, res) => {
-  return res.render("postAdoption"); 
+  return res.render("postAdoption");
 });
 
 router.get("/petRoutes", async (req, res) => {
@@ -27,7 +24,6 @@ router.get("/petRoutes", async (req, res) => {
     res.status(500).json(error);
   }
 });
-
 
 router.get("/petRoutes/:id", async (req, res) => {
   try {
