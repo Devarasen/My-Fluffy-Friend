@@ -1,15 +1,15 @@
-const logout = async () => {
-    const response = await fetch('/api/users/logout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+document
+  .querySelector("#logout-link")
+  .addEventListener("click", async (event) => {
+    event.preventDefault();
+    const response = await fetch("/api/users/logout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
     });
-  
+
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace("/");
     } else {
       alert(response.statusText);
     }
-  };
-  
-  document.querySelector('#logout').addEventListener('click', logout);
-  
+  });
