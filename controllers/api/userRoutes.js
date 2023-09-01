@@ -18,6 +18,8 @@ router.post("/login", async (req, res) => {
 
     // Log the stored password hash
     console.log("Stored password hash:", userData.password);
+    console.log(req.body.email);
+    console.log(userData.id);
 
     if (!userData) {
       return res
@@ -51,6 +53,12 @@ router.post("/login", async (req, res) => {
     res.status(400).json({ message: "An error occurred", error: err });
   }
 });
+
+// router.post("/signUp", async (req, res) => {
+//   try {
+//     const newUserData = await User.create;
+//   } catch (error) {}
+// });
 
 // Post request to logout
 router.post("/logout", (req, res) => {

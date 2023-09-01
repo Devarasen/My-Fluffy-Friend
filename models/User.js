@@ -8,7 +8,7 @@ class User extends Model {
       console.error("Missing login password or stored hash");
       return false;
     }
-    return bcrypt.compareSync(loginPw, this.password);
+    return loginPw === this.password;
   }
 }
 
