@@ -7,24 +7,28 @@ const loginFormHandler = async (event) => {
   // Collect values from the login form
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
-  console.log("Email:", email);
-  console.log("Password:", password);
+  console.log("Sending email and password:", { email, password });
 
   if (email && password) {
-    // Send a POST request to the API endpoint (make sure the path matches your API route)
-    const response = await fetch("/api/users/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "application/json" },
-    });
-    console.log("API Response:", response);
+    try {
+      const response = await fetch("/api/userRoutes/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+      console.log("API Response:", response);
 
-    if (response.ok) {
-      // If successful, redirect the browser to the home page
-      console.log(response.statusText);
-    } else {
-      console.log(response.statusText);
-      alert(response.statusText);
+      if (response.ok) {
+        console.log(response.statusText);
+        document.location.replace("/");
+      } else {
+        alert(response.statusText);
+      }
+    } catch (error) {
+      console.error("There was an error:", error);
+      alert(
+        "There was an error processing your request. Please try again later."
+      );
     }
   }
 };
@@ -38,7 +42,7 @@ const signupFormHandler = async (event) => {
 
   if (name && email && password) {
     // Send a POST request to the API endpoint (make sure the path matches your API route)
-    const response = await fetch("/api/users", {
+    const response = await fetch("/api/userRoutes/signUp", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
       headers: { "Content-Type": "application/json" },

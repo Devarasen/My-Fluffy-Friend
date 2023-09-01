@@ -8,22 +8,20 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/login", async (req, res) => {
-  return res.render("login");
+  return res.render("login", { logged_in: req.session.logged_in });
 });
 
 router.get("/post-adoption", async (req, res) => {
-  return res.render("postAdoption");
+  return res.render("postAdoption", { logged_in: req.session.logged_in });
 });
 
 router.get("/contact", async (req, res) => {
-  return res.render("contact");
+  return res.render("contact", { logged_in: req.session.logged_in });
 });
 
 router.get("/about", async (req, res) => {
-  return res.render("about");
+  return res.render("about", { logged_in: req.session.logged_in });
 });
-
-
 
 router.get("/petRoutes", async (req, res) => {
   try {
@@ -31,7 +29,10 @@ router.get("/petRoutes", async (req, res) => {
       include: [Category, AdoptionCenter],
     });
     const formattedPetData = petData.map((pet) => pet.get({ plain: true }));
-    res.render("pets", { petData: formattedPetData });
+    res.render("pets", {
+      petData: formattedPetData,
+      logged_in: req.session.logged_in,
+    });
   } catch (error) {
     res.status(500).json(error);
   }
@@ -44,7 +45,10 @@ router.get("/petRoutes/:id", async (req, res) => {
     });
     const formattedPetData = petData.get({ plain: true });
     console.log("check", formattedPetData);
-    res.render("pet", { petData: formattedPetData });
+    res.render("pet", {
+      petData: formattedPetData,
+      logged_in: req.session.logged_in,
+    });
   } catch (error) {
     res.status(500).json(error);
   }
