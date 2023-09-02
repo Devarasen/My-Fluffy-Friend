@@ -36,12 +36,11 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector("#signupUsername").value.trim();
-  const email = document.querySelector("#signUpEmail").value.trim();
-  const password = document.querySelector("#signupPassword").value.trim();
+  const name = document.querySelector("#signup-name").value.trim();
+  const email = document.querySelector("#signup-email").value.trim();
+  const password = document.querySelector("#signup-password").value.trim();
 
   if (name && email && password) {
-    // Send a POST request to the API endpoint (make sure the path matches your API route)
     const response = await fetch("/api/userRoutes/signUp", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
