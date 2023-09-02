@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({ destination: "/images" });
 
 // Middleware
 app.use(express.static("public"));
@@ -62,12 +62,12 @@ app.set("views", path.join(__dirname, "views"));
 
 // Multer
 
-app.get("/upload", (req, res) => {
+app.get("/images", (req, res) => {
   res.render("upload");
 });
 
-app.post("/upload", upload.single("image"), (req, res) => {
-  res.send("image uploade");
+app.post("/images", upload.single("image"), (req, res) => {
+  res.send("image uploaded");
 });
 
 // Start the server
@@ -77,12 +77,4 @@ sequelize.sync({ force: false }).then(() => {
   });
 });
 
-// Code for handlebars
 
-{
-  /* <h1>Upload Image</h1>
-<form method="POST" action="/upload" enctype="multipart/form-data">
-  <input type="file name="image>
-  <input type="submit">  
-</form> */
-}
