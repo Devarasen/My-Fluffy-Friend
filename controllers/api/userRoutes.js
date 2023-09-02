@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const { User } = require("../../models");
-const withAuth = require("../../utils/auth");
 
 // Get userData - test
 router.get("/", async (req, res) => {
@@ -12,71 +11,54 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Post userData - test
-router.post("/", async (req, res) => {
-  try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
-
-    if (!userData) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password, please try again" });
-      return;
-    }
-
-    const validPassword = await userData.checkPassword(req.body.password);
-
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password, please try again" });
-      return;
-    }
-
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.json({ user: userData, message: "You are now logged in!" });
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(400).json(err);
-  }
-});
-
 // Login post request
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
+    // Log the stored password hash
+    console.log("Stored password hash:", userData.password);
+    console.log(req.body.email);
+    console.log(userData.id);
+
     if (!userData) {
-      res
+      return res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
-      return;
     }
+
+    // Log the incoming password
+    console.log("Incoming password:", req.body.password);
 
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res
+      return res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
-      return;
     }
 
-    req.session.save(() => {
+    req.session.save((err) => {
+      if (err) {
+        console.error("Session save error:", err);
+        return res.status(500).json({ message: "Error saving session." });
+      }
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.redirect("/");
+      res.json({ message: "Login successful", user_id: userData.id });
     });
   } catch (err) {
     console.log(err);
-    res.status(400).json(err);
+    res.status(400).json({ message: "An error occurred", error: err });
   }
 });
+
+// router.post("/signUp", async (req, res) => {
+//   try {
+//     const newUserData = await User.create;
+//   } catch (error) {}
+// });
 
 // Post request to logout
 router.post("/logout", (req, res) => {

@@ -26,4 +26,18 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.post("/post-pet", async (req, res) => {
+  try {
+    const petData = await Pet.create({
+      pet_name: req.body.petName,
+      breed: req.body.breed,
+      age: req.body.age,
+    });
+
+    res.status(200).json(petData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;

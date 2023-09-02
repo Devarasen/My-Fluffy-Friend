@@ -2,13 +2,13 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="col-md-6">
             <h1>Login</h1>
-            <form class="login-form" id="email-login-form" action="/api/users/login" method="POST">
+            <form class="login-form" id="email-login-form">
                 <div class="form-group">
-                    <label for="email-login-label">Email</label>
+                    <label for="email-login">Email</label>
                     <input type="email" class="form-control" id="email-login" name="email-login" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password-login">Password</label>
                     <input type="password" class="form-control" id="password-login" name="password" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
@@ -19,11 +19,7 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="col-md-6">
             <h1>If not registered yet, sign up here:</h1>
-            <form class="signup-form" id="signup-form" method="POST">
-                <div class="form-group">
-                    <label for="signupUsername">Username</label>
-                    <input type="text" class="form-control" id="signupUsername" name="signupUsername" required>
-                </div>
+            <form class="signup-form" id="signup-form">
                 <div class="form-group">
                     <label for="signUpEmail">Email</label>
                     <input type="email" class="form-control" id="signUpEmail" name="signUpEmail" required>
@@ -36,6 +32,6 @@
             </form>
         </div>
     </div>
+    <script src="./js/login.js"></script>
 </body>
 
-<script src="./js/login.js"></script>

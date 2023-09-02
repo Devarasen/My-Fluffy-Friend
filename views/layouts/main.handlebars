@@ -5,6 +5,7 @@
     <!-- <link rel="stylesheet" href="public/css/style.css"> -->
 </head>
 <body>
+ 
     <header>
         {{> header}} <!-- Include the header partial -->
     </header>
@@ -12,23 +13,24 @@
     <main>
         {{{body}}} <!-- Render the content of the view -->
     </main>
-
-    <footer>
-        {{> footer}} <!-- Include the footer partial -->
-    </footer>
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <!-- Handlebars.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-
-
+    {{#if logged_in}}
+    <script src="./js/logout.js" async></script>
+    {{/if}}
 </body>
+
+<footer style="text-align: center;">
+    <p>&copy; {{getCurrentYear}} Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin with a lot of googling and caffeine!</p>
+</footer>
+
+
 </html>
