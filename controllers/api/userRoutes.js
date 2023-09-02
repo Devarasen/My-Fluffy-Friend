@@ -16,19 +16,11 @@ router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
-    // Log the stored password hash
-    console.log("Stored password hash:", userData.password);
-    console.log(req.body.email);
-    console.log(userData.id);
-
     if (!userData) {
       return res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
     }
-
-    // Log the incoming password
-    console.log("Incoming password:", req.body.password);
 
     const validPassword = await userData.checkPassword(req.body.password);
 
@@ -54,11 +46,20 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// router.post("/signUp", async (req, res) => {
-//   try {
-//     const newUserData = await User.create;
-//   } catch (error) {}
-// });
+router.post("/signUp", async (req, res) => {
+  try {
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 // Post request to logout
 router.post("/logout", (req, res) => {
