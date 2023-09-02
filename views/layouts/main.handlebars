@@ -13,10 +13,7 @@
     <main>
         {{{body}}} <!-- Render the content of the view -->
     </main>
-
-    <footer>
-        {{> footer}} <!-- Include the footer partial -->
-    </footer>
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -30,4 +27,10 @@
     <script src="./js/logout.js" async></script>
     {{/if}}
 </body>
+
+<footer style="text-align: center;">
+    <p>&copy; {{getCurrentYear}} Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin with a lot of googling and caffeine!</p>
+</footer>
+
+
 </html>
