@@ -1,6 +1,7 @@
 async function newFormHandler(event) {
     event.preventDefault();
     const petName = document.querySelector('#petName').value;
+    const species = document.querySelector('#species').value;
     const breed = document.querySelector('#breed').value;
     const age = document.querySelector('#age').value;
     
@@ -8,6 +9,7 @@ async function newFormHandler(event) {
         method: 'POST',
         body: JSON.stringify({
             petName,
+            species,
             breed,
             age,
         }),

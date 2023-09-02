@@ -11,7 +11,7 @@
                     <input type="text" class="form-control" id="petName" name="petName" required>
                 </div>
                 <div class="form-group">
-                    <label for="age">Species</label>
+                    <label for="species">Specie</label>
                     <input type="text" class="form-control" id="species" name="species" required>
                 </div>
                 <div class="form-group">
@@ -23,6 +23,12 @@
                     <input type="text" class="form-control" id="age" name="age" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit for Adoption</button>
+            </form>
+
+
+            <form method="POST" action="/images" enctype="multipart/form-data">
+                <input type="file" name="image">
+                <input type="submit">  
             </form>
         </div>
     </div>

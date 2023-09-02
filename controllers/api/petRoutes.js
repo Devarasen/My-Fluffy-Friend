@@ -30,6 +30,7 @@ router.post("/post-pet", async (req, res) => {
   try {
     const petData = await Pet.create({
       pet_name: req.body.petName,
+      category_id: req.body.species.toLowerCase()=="cat"? 2 : 1,
       breed: req.body.breed,
       age: req.body.age,
     });
