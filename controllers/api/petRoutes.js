@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { Pet, Category, AdoptionCenter } = require("../../models");
+const { Pet, Category } = require("../../models");
 
 router.get("/", async (req, res) => {
   try {
     const petData = await Pet.findAll({
-      include: [Category, AdoptionCenter],
+      include: [Category],
     });
     const formattedPetData = petData.map((pet) => pet.get({ plain: true }));
     res.status(200).json(formattedPetData);
@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const petData = await Pet.findByPk(req.params.id, {
-      include: [Category, AdoptionCenter],
+      include: [Category],
     });
     const formattedPetData = petData.get({ plain: true });
     res.status(200).json(formattedPetData);
