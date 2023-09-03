@@ -36,8 +36,6 @@ On the pet profile page, I should see a "Apply for Adoption" button that allows 
 
 When I click the "Apply for Adoption" button, I should be directed to a user-friendly adoption application form. This form should request necessary information such as my name, contact details, living situation, and preferences for pet care.
 
-After submitting the adoption application, I should receive an email confirmation acknowledging the submission, along with an estimated timeframe for a response from the animal shelter or rescue organization.
-
 The platform should provide clear and easily accessible contact information for the animal shelters or rescue organizations, including their phone numbers, email addresses, and physical addresses, in case I need to reach out for additional information or assistance.
 
 # Definition of Done
@@ -67,3 +65,4 @@ Note: Additional user stories and features could be added to enhance the platfor
 
 
 - Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin
+- After submitting the adoption application, I should receive an email confirmation acknowledging the submission, along with an estimated timeframe for a response from the animal shelter or rescue organization.
