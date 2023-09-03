@@ -53,7 +53,7 @@ Note: Additional user stories and features could be added to enhance the platfor
 - multer: "1.4.5",
 - mysql2: "2.2.5",
 - sequelize: "6.3.5"
-- Bootstrap: 
+- Bootstrap: "4.5.2"
 
 Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin
 
