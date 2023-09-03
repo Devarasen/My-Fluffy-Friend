@@ -1,21 +1,20 @@
+# Github:
+https://github.com/Devarasen/Pet-Adoption-Project-2.git
+
+# Heroku Deployment:
+https://pet-adoption-984bb069e00d.herokuapp.com/
+
 # Pet-Adoption-Project-2
-Pet Adoption Project 2
 
+Build a platform that connects animal shelters and rescue organizations with potential adopters. Users can search for pets, learn about their personalities, and apply for adoption.
 
-Pet Adoption Platform: Build a platform that connects animal shelters and rescue organizations with potential adopters. Users can search for pets, learn about their personalities, and apply for adoption.
+Title: Pet Adoption Platform
 
-##
-
-
-###
-
-Title: Pet Adoption Platform User Story
-
-User Story:
+# User Story:
 
 As a potential pet adopter, I want to easily search for pets available for adoption on the platform, so that I can find the perfect companion for my family.
 
-Acceptance Criteria:
+# Acceptance Criteria:
 
 When I land on the platform's homepage, I should see a prominently displayed search bar that allows me to search for pets.
 
