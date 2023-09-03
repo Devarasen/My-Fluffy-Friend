@@ -9,7 +9,7 @@ https://pet-adoption-984bb069e00d.herokuapp.com/
 ## Table of Contents
 
 - [User Story](#user-story)
-- [Technologies](#technologies)
+- [Technologies](#tech-used)
 - [Credits](#credits)
 - [Future Tech](#future-technologies)
 
