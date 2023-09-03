@@ -18,17 +18,21 @@
 
 <body>
     <div class="container">
-        <h1 class="text-lg"><strong>{{petData.pet_name}}</strong></h1>
-        <div class="row">
+        <div class="row justify-content-center align-items-center">
             <div class="col-md-6">
-                <p class="text-lg">Species: {{petData.category.category_name}}</p>
-                <p class="text-lg">Breed: {{petData.breed}}</p>
-                <p class="text-lg">Adoption Centre: {{petData.adoption_center.center_name}}</p>
-                <p class="text-lg">Address: {{petData.adoption_center.address}}</p>
-                <p class="text-lg">Age: {{petData.age}}</p>
+                <div class="col-md-12 bg-primary text-white border rounded p-3">
+                    <p class="text-lg">Name: {{petData.pet_name}}</p>
+                    <p class="text-lg">Species: {{petData.category.category_name}}</p>
+                    <p class="text-lg">Breed: {{petData.breed}}</p>
+                    <p class="text-lg">Adoption Centre: {{petData.adoption_center.center_name}}</p>
+                    <p class="text-lg">Address: {{petData.adoption_center.address}}</p>
+                    <p class="text-lg">Age: {{petData.age}}</p>
+                </div>
             </div>
             <div class="col-md-6">
-                <img src="{{petData.image}}" alt={{petData.name}} class="img-fluid" style="max-height: 500px;">
+                <div class="col-md-12">
+                    <img src="{{petData.image}}" alt="{{petData.name}}" class="img-fluid">
+                </div>
             </div>
         </div>
     </div>
