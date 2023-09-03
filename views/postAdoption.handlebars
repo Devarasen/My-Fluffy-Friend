@@ -1,5 +1,7 @@
 
 <title>Post Adoption</title>
+
+{{#if logged_in}}
 <body>
 
     <div class="container d-flex justify-content-center align-items-center">
@@ -39,3 +41,11 @@
 </body>
 
 <script src="./js/post-pet.js"></script>
+
+{{else}}
+<body>
+    <h1>Unable to post pet without logging in. Please login or sign up to post a pet up for adoption through our services.</h1>
+    {{> loginForm}}
+</body>
+
+{{/if}}
