@@ -13,32 +13,6 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Multer
-
-// const multer = require("multer");
-
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, "./public/images");
-//   },
-//   filename: (req, file, cb) => {
-//     console.log(file);
-//     cb(null, Date.now() + path.extname(file.originalname));
-//   },
-// });
-
-// const upload = multer({ storage: storage });
-
-// // Multer
-
-// app.get("/images", (req, res) => {
-//   res.render("upload");
-// });
-
-// app.post("/images", upload.single("image"), (req, res) => {
-//   res.send("image uploaded");
-// });
-
 // Sets up session for cookies and connect to our Sequelize db
 const sess = {
   secret: "Super secret secret",
