@@ -7,7 +7,8 @@ router.get("/", async (req, res) => {
     const userData = await User.findAll();
     res.status(200).json(userData);
   } catch (error) {
-    res.status(500).json(error);
+    console.error("Error fetching all users:", error);
+    res.status(500).json({ message: "Internal Server Error", error });
   }
 });
 
@@ -18,7 +19,7 @@ router.post("/login", async (req, res) => {
 
     if (!userData) {
       return res
-        .status(400)
+        .status(401)
         .json({ message: "Incorrect email or password, please try again" });
     }
 
@@ -26,13 +27,13 @@ router.post("/login", async (req, res) => {
 
     if (!validPassword) {
       return res
-        .status(400)
+        .status(401)
         .json({ message: "Incorrect email or password, please try again" });
     }
 
-    req.session.save((err) => {
-      if (err) {
-        console.error("Session save error:", err);
+    req.session.save((error) => {
+      if (error) {
+        console.error("Session save error:", error);
         return res.status(500).json({ message: "Error saving session." });
       }
       req.session.user_id = userData.id;
@@ -40,9 +41,9 @@ router.post("/login", async (req, res) => {
 
       res.json({ message: "Login successful", user_id: userData.id });
     });
-  } catch (err) {
-    console.log(err);
-    res.status(400).json({ message: "An error occurred", error: err });
+  } catch (error) {
+    console.error("Error during login:", error);
+    res.status(400).json({ message: "An error occurred" });
   }
 });
 
@@ -56,16 +57,20 @@ router.post("/signUp", async (req, res) => {
 
       res.status(200).json(userData);
     });
-  } catch (err) {
-    res.status(400).json(err);
+  } catch (error) {
+    console.error("Error during sign-up:", error);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
 // Post request to logout
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
-    req.session.destroy(() => {
-      console.log("Log Out Success");
+    req.session.destroy((error) => {
+      if (error) {
+        console.error("Error during session destroy:", error);
+        return res.status(500).json({ message: "Error logging out." });
+      }
       res.status(204).end();
     });
   } else {
