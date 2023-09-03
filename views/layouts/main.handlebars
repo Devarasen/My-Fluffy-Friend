@@ -7,12 +7,15 @@
 <body>
  
     <header>
-        {{> header}} <!-- Include the header partial -->
-    </header>
+        {{> header}} 
 
     <main>
-        {{{body}}} <!-- Render the content of the view -->
+        {{{body}}} 
     </main>
+
+    <footer>{{>footer}}
+
+    </footer>
     
 
     <!-- Bootstrap CSS -->
@@ -28,9 +31,6 @@
     {{/if}}
 </body>
 
-<footer style="text-align: center;">
-    <p>&copy; {{getCurrentYear}} Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin with a lot of googling and caffeine!</p>
-</footer>
 
 
 </html>
