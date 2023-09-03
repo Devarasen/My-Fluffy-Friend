@@ -13,24 +13,10 @@ https://pet-adoption-984bb069e00d.herokuapp.com/
 - [Credits](#credits)
 - [Future Tech](#futuretechnologies)
 
-# Pet-Adoption-Project-2
-
-## Table of Contents
-
-- [User Story](#userstory)
-- [Technologies](#techused)
-- [Credits](#credits)
-- [Future Tech](#futuretechnologies)
 
 ## Pet-Adoption-Project-2
 
 Build a platform that connects animal shelters and rescue organizations with potential adopters. Users can search for pets, learn about their personalities, and apply for adoption.
-
-## User Story
-
-As a potential pet adopter, I want to easily search for pets available for adoption on the platform, so that I can find the perfect companion for my family.
-
-## Acceptance Criteria
 
 # User Story
 
@@ -55,9 +41,6 @@ After submitting the adoption application, I should receive an email confirmatio
 
 The platform should provide clear and easily accessible contact information for the animal shelters or rescue organizations, including their phone numbers, email addresses, and physical addresses, in case I need to reach out for additional information or assistance.
 
-
-## Definition of Done
-
 # Definition of Done
 
 
@@ -68,9 +51,6 @@ Users receive timely email confirmations after submitting adoption applications.
 The user profile dashboard accurately displays the status of adoption applications.
 Contact information for shelters and rescue organizations is up to date and easily accessible on the platform.
 Note: Additional user stories and features could be added to enhance the platform further, such as user registration, user reviews, integration with social media platforms, and more.
-
-
-## Tech Used
 
 # Tech Used
 
@@ -83,9 +63,6 @@ Note: Additional user stories and features could be added to enhance the platfor
 - mysql2: "2.2.5",
 - sequelize: "6.3.5"
 - Bootstrap: "4.5.2"
-
-
-## Future Technologies
 
 # Future Technologies
 
