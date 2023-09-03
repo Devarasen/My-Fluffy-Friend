@@ -32,8 +32,6 @@ The search results should be displayed in a clear and organized manner, showing 
 
 When I click on a pet's name or the "View Details" button in the search results, I should be taken to a dedicated pet profile page with more information about the pet, including its age, breed, gender, personality traits, health status, and location.
 
-On the pet profile page, I should see a "Apply for Adoption" button that allows me to express my interest in adopting that specific pet.
-
 When I click the "Apply for Adoption" button, I should be directed to a user-friendly adoption application form. This form should request necessary information such as my name, contact details, living situation, and preferences for pet care.
 
 The platform should provide clear and easily accessible contact information for the animal shelters or rescue organizations, including their phone numbers, email addresses, and physical addresses, in case I need to reach out for additional information or assistance.
@@ -66,3 +64,4 @@ Note: Additional user stories and features could be added to enhance the platfor
 
 - Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin
 - After submitting the adoption application, I should receive an email confirmation acknowledging the submission, along with an estimated timeframe for a response from the animal shelter or rescue organization.
+- On the pet profile page, I should see a "Apply for Adoption" button that allows me to express my interest in adopting that specific pet.
