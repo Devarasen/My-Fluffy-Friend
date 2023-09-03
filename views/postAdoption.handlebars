@@ -1,9 +1,62 @@
-
 <title>Post Adoption</title>
 
 {{#if logged_in}}
-<body>
+  <body>
+    <div class="container d-flex justify-content-center align-items-center">
+      <div>
+        <h1>Post Adoption</h1>
+        <form id="post-adoption-form" action="/api/petRoutes/post-pet" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="petName">Pet Name</label>
+            <input type="text" class="form-control" id="petName" name="petName" required>
+          </div>
+          <div class="form-group">
+            <label for="species">Species</label>
+            <select class="form-control" id="species" name="species" required>
+              <option value="Cat">Cat</option>
+              <option value="Dog">Dog</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="breed">Breed</label>
+            <input type="text" class="form-control" id="breed" name="breed" required>
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" id="age" name="age" required>
+          </div>
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" class="form-control" id="image" name="image">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit for Adoption</button>
+        </form>
+      </div>
+    </div>
+  </body>
 
+  <script src="./js/post-pet.js"></script>
+
+{{else}}
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <p><h1>Unable to post a pet without logging in</h1></p>
+        <p><h1>Please login or sign up to post a pet up for adoption through our services!</h1></p>
+      </div>
+      <div class="col-md-6">
+        {{> loginForm}}
+      </div>
+    </div>
+  </div>
+
+{{/if}}
+
+
+{{!-- <title>Post Adoption</title>
+
+{{#if logged_in}}
+<body>
     <div class="container d-flex justify-content-center align-items-center">
         <div>
             <h1>Post Adoption</h1>
@@ -17,8 +70,8 @@
             <select class="form-control" id="species" name="species" required>
             <option value="Cat">Cat</option>
             <option value="Dog">Dog</option>
-    </select>
-</div>
+            </select>
+    </div>
                 <div class="form-group">
                     <label for="breed">Breed</label>
                     <input type="text" class="form-control" id="breed" name="breed" required>
@@ -33,12 +86,6 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit for Adoption</button>
             </form>
-
-
-            {{!-- <form method="POST" action="/postPetRoutes/images" enctype="multipart/form-data">
-                <input type="file" name="image">
-                <input type="submit">  
-            </form> --}}
         </div>
     </div>
 </body>
@@ -58,4 +105,4 @@
         </div>
     </div>
 
-{{/if}}
+{{/if}} --}}
