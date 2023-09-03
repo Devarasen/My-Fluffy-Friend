@@ -4,17 +4,24 @@ https://github.com/Devarasen/Pet-Adoption-Project-2.git
 # Heroku Deployment:
 https://pet-adoption-984bb069e00d.herokuapp.com/
 
+![Alt text](<assets/Pet Adoption site ss.png>)
+
+## Table of Contents
+
+- [User Story](#userstory)
+- [Technologies](#techused)
+- [Credits](#credits)
+- [Future Tech](#futuretechnologies)
+
 # Pet-Adoption-Project-2
 
 Build a platform that connects animal shelters and rescue organizations with potential adopters. Users can search for pets, learn about their personalities, and apply for adoption.
 
-Title: Pet Adoption Platform
-
-# User Story:
+# User Story
 
 As a potential pet adopter, I want to easily search for pets available for adoption on the platform, so that I can find the perfect companion for my family.
 
-# Acceptance Criteria:
+# Acceptance Criteria
 
 When I land on the platform's homepage, I should see a prominently displayed search bar that allows me to search for pets.
 
@@ -30,11 +37,9 @@ When I click the "Apply for Adoption" button, I should be directed to a user-fri
 
 After submitting the adoption application, I should receive an email confirmation acknowledging the submission, along with an estimated timeframe for a response from the animal shelter or rescue organization.
 
-If I'm logged into the platform, I should be able to track the status of my adoption application from my user profile dashboard. This dashboard should display information about my submitted applications, their status (e.g., pending, approved, declined), and any communication history with the shelter or organization.
-
 The platform should provide clear and easily accessible contact information for the animal shelters or rescue organizations, including their phone numbers, email addresses, and physical addresses, in case I need to reach out for additional information or assistance.
 
-# Definition of Done:
+# Definition of Done
 
 The search functionality is fully functional and returns accurate results based on the specified criteria.
 The pet profile pages are populated with comprehensive and up-to-date information about each pet.
@@ -44,7 +49,7 @@ The user profile dashboard accurately displays the status of adoption applicatio
 Contact information for shelters and rescue organizations is up to date and easily accessible on the platform.
 Note: Additional user stories and features could be added to enhance the platform further, such as user registration, user reviews, integration with social media platforms, and more.
 
-# Tech Used: 
+# Tech Used
 
 - bcrypt: "5.0.0"
 - express: "4.18.2",
@@ -55,6 +60,6 @@ Note: Additional user stories and features could be added to enhance the platfor
 - sequelize: "6.3.5"
 - Bootstrap: "4.5.2"
 
-Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin
+# Future Technologies
 
-![Alt text](<assets/Pet Adoption site ss.png>)
+- Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin
