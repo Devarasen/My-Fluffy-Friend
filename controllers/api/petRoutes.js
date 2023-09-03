@@ -12,13 +12,8 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     const petName = req.body.petName;
     const sanitizedPetName = petName.replace(/[^a-zA-Z0-9]/g, "_");
-    filename = `${sanitizedPetName}${path.extname(file.originalname)}`;
-    const imagePath = `/images/${filename}`; // Add the /images/ prefix
-    cb(null, filename);
-
-    // Also update the image filename in the petData object before storing it in the database
-    req.body.image = imagePath;
-    console.log(imagePath);
+    req.filename = `${sanitizedPetName}${path.extname(file.originalname)}`;
+    cb(null, req.filename);
   },
 });
 
@@ -30,7 +25,6 @@ router.post("/post-pet", upload.single("image"), async (req, res) => {
     console.log("Req File:", req.file);
 
     const { petName, species, breed, age } = req.body;
-    // const image = req.file ? req.file.filename : null;
 
     const category_id = species.toLowerCase() === "cat" ? 2 : 1;
 
@@ -40,7 +34,7 @@ router.post("/post-pet", upload.single("image"), async (req, res) => {
       category_id: category_id,
       breed,
       age,
-      image: `/images/${filename}`,
+      image: `/images/${req.filename}`,
     });
 
     console.log("Entered Pet Data:", petData);
