@@ -5,7 +5,7 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div>
             <h1>Post Adoption</h1>
-            <form id="post-adoption-form" action="/post-adoption" method="POST">
+            <form id="post-adoption-form" action="/api/petRoutes/post-pet" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="petName">Pet Name</label>
                     <input type="text" class="form-control" id="petName" name="petName" required>
@@ -22,14 +22,18 @@
                     <label for="age">Age</label>
                     <input type="text" class="form-control" id="age" name="age" required>
                 </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" class="form-control" id="image" name="image">
+                </div>
                 <button type="submit" class="btn btn-primary">Submit for Adoption</button>
             </form>
 
 
-            <form method="POST" action="/images" enctype="multipart/form-data">
+            {{!-- <form method="POST" action="/postPetRoutes/images" enctype="multipart/form-data">
                 <input type="file" name="image">
                 <input type="submit">  
-            </form>
+            </form> --}}
         </div>
     </div>
 </body>

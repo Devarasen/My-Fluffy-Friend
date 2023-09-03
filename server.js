@@ -8,25 +8,36 @@ const routes = require("./controllers");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const sequelize = require("./config/connection");
 
-// Multer
-
-const multer = require("multer");
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "images");
-  },
-  filename: (req, file, cb) => {
-    console.log(file);
-    cb(null, Date.now() + path.extname(file.originalname));
-  },
-});
-
-const upload = multer({ destination: "/images" });
-
 // Middleware
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Multer
+
+// const multer = require("multer");
+
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, "./public/images");
+//   },
+//   filename: (req, file, cb) => {
+//     console.log(file);
+//     cb(null, Date.now() + path.extname(file.originalname));
+//   },
+// });
+
+// const upload = multer({ storage: storage });
+
+// // Multer
+
+// app.get("/images", (req, res) => {
+//   res.render("upload");
+// });
+
+// app.post("/images", upload.single("image"), (req, res) => {
+//   res.send("image uploaded");
+// });
 
 // Sets up session for cookies and connect to our Sequelize db
 const sess = {
@@ -60,21 +71,9 @@ app.engine(
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 
-// Multer
-
-app.get("/images", (req, res) => {
-  res.render("upload");
-});
-
-app.post("/images", upload.single("image"), (req, res) => {
-  res.send("image uploaded");
-});
-
 // Start the server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log("Server listening on: http://localhost:" + PORT);
   });
 });
-
-
