@@ -4,36 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets available</title>
-    <style>
-        .text-lg {
-            font-size: 35px; 
-        }
-      
-        .bold-text {
-            font-weight: bold;
-        }
-    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center" style="height: 100vh;"> <!-- Adjust height as needed -->
             <div class="col-md-6">
-                <div class="col-md-12 bg-primary text-white border rounded p-3">
-                    <p class="text-lg">Name: {{petData.pet_name}}</p>
-                    <p class="text-lg">Species: {{petData.category.category_name}}</p>
-                    <p class="text-lg">Breed: {{petData.breed}}</p>
-                    <p class="text-lg">Adoption Centre: {{petData.adoption_center.center_name}}</p>
-                    <p class="text-lg">Address: {{petData.adoption_center.address}}</p>
-                    <p class="text-lg">Age: {{petData.age}}</p>
+                <div class="card border border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-4">{{petData.pet_name}}</h3>
+                    </div>
+                    <div class="card-body" style="height: 100%;"> <!-- Set the height to 100% to match the image -->
+                        <p><span class="font-weight-bold">Species:</span> {{petData.category.category_name}}</p>
+                        <p><span class="font-weight-bold">Breed:</span> {{petData.breed}}</p>
+                        <p><span class="font-weight-bold">Adoption Centre:</span> {{petData.adoption_center.center_name}}</p>
+                        <p><span class="font-weight-bold">Address:</span> {{petData.adoption_center.address}}</p>
+                        <p><span class="font-weight-bold">Age:</span> {{petData.age}}</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="col-md-12">
-                    <img src="{{petData.image}}" alt="{{petData.name}}" class="img-fluid">
-                </div>
+                <img src="{{petData.image}}" alt="{{petData.name}}" class="img-fluid border border-primary" style="height: 100%;"> <!-- Set the height to 100% to match the card body -->
             </div>
         </div>
     </div>
 </body>
 </html>
+
