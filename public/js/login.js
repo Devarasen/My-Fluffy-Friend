@@ -40,7 +40,7 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector("#signup-email").value.trim();
   const password = document.querySelector("#signup-password").value.trim();
 
-  if (name && email && password) {
+  try {
     const response = await fetch("/api/userRoutes/signUp", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
@@ -53,6 +53,11 @@ const signupFormHandler = async (event) => {
     } else {
       alert(response.statusText);
     }
+  } catch (error) {
+    console.error("There was an error during the signup process:", error);
+    alert(
+      "There was an error processing your sign up request. Please try again later."
+    );
   }
 };
 
