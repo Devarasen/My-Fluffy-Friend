@@ -34,7 +34,7 @@ If I'm logged into the platform, I should be able to track the status of my adop
 
 The platform should provide clear and easily accessible contact information for the animal shelters or rescue organizations, including their phone numbers, email addresses, and physical addresses, in case I need to reach out for additional information or assistance.
 
-Definition of Done:
+# Definition of Done:
 
 The search functionality is fully functional and returns accurate results based on the specified criteria.
 The pet profile pages are populated with comprehensive and up-to-date information about each pet.
@@ -44,3 +44,17 @@ The user profile dashboard accurately displays the status of adoption applicatio
 Contact information for shelters and rescue organizations is up to date and easily accessible on the platform.
 Note: Additional user stories and features could be added to enhance the platform further, such as user registration, user reviews, integration with social media platforms, and more.
 
+# Tech Used: 
+
+- bcrypt: "5.0.0"
+- express: "4.18.2",
+- express-handlebars: "5.3.5",
+- express-session: "1.17.1",
+- multer: "1.4.5",
+- mysql2: "2.2.5",
+- sequelize: "6.3.5"
+- Bootstrap: 
+
+Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin
+
+![Alt text](<assets/Pet Adoption site ss.png>)
