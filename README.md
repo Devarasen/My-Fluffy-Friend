@@ -13,6 +13,15 @@ https://pet-adoption-984bb069e00d.herokuapp.com/
 - [Credits](#credits)
 - [Future Tech](#futuretechnologies)
 
+# Pet-Adoption-Project-2
+
+## Table of Contents
+
+- [User Story](#userstory)
+- [Technologies](#techused)
+- [Credits](#credits)
+- [Future Tech](#futuretechnologies)
+
 ## Pet-Adoption-Project-2
 
 Build a platform that connects animal shelters and rescue organizations with potential adopters. Users can search for pets, learn about their personalities, and apply for adoption.
@@ -22,6 +31,13 @@ Build a platform that connects animal shelters and rescue organizations with pot
 As a potential pet adopter, I want to easily search for pets available for adoption on the platform, so that I can find the perfect companion for my family.
 
 ## Acceptance Criteria
+
+# User Story
+
+As a potential pet adopter, I want to easily search for pets available for adoption on the platform, so that I can find the perfect companion for my family.
+
+# Acceptance Criteria
+
 
 When I land on the platform's homepage, I should see a prominently displayed search bar that allows me to search for pets.
 
@@ -39,7 +55,11 @@ After submitting the adoption application, I should receive an email confirmatio
 
 The platform should provide clear and easily accessible contact information for the animal shelters or rescue organizations, including their phone numbers, email addresses, and physical addresses, in case I need to reach out for additional information or assistance.
 
+
 ## Definition of Done
+
+# Definition of Done
+
 
 The search functionality is fully functional and returns accurate results based on the specified criteria.
 The pet profile pages are populated with comprehensive and up-to-date information about each pet.
@@ -49,7 +69,11 @@ The user profile dashboard accurately displays the status of adoption applicatio
 Contact information for shelters and rescue organizations is up to date and easily accessible on the platform.
 Note: Additional user stories and features could be added to enhance the platform further, such as user registration, user reviews, integration with social media platforms, and more.
 
+
 ## Tech Used
+
+# Tech Used
+
 
 - bcrypt: "5.0.0"
 - express: "4.18.2",
@@ -60,6 +84,10 @@ Note: Additional user stories and features could be added to enhance the platfor
 - sequelize: "6.3.5"
 - Bootstrap: "4.5.2"
 
+
 ## Future Technologies
+
+# Future Technologies
+
 
 - Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin
