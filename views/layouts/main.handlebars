@@ -41,6 +41,12 @@
     <title>{{pageTitle}}</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS to initially hide the footer */
+        .fixed-bottom-hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -51,10 +57,10 @@
         {{{body}}}
     </main>
 
-    <!-- Bootstrap footer with fixed positioning -->
-    <footer class="footer bg-primary text-center py-3 text-white fixed-bottom">
+    <!-- Bootstrap footer with fixed positioning, initially hidden -->
+    <footer class="footer bg-primary text-center py-3 fixed-bottom text-white fixed-bottom-hidden">
         <div class="container">
-            <p>&copy; {{getCurrentYear}} Our Pet Adoption App</p>
+            <p>&copy; {{getCurrentYear}} Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin with a lot of googling and caffeine!</p>
         </div>
     </footer>
 
@@ -67,5 +73,16 @@
     {{#if logged_in}}
     <script src="./js/logout.js" async></script>
     {{/if}}
+
+    <script>
+        // JavaScript to show the footer when scrolling to the bottom
+        $(window).scroll(function() {
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                $('.fixed-bottom-hidden').show(); // Show the footer
+            } else {
+                $('.fixed-bottom-hidden').hide(); // Hide the footer
+            }
+        });
+    </script>
 </body>
 </html>
