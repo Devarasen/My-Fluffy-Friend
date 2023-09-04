@@ -4,7 +4,7 @@ https://github.com/Devarasen/Pet-Adoption-Project-2.git
 # Heroku Deployment:
 https://pet-adoption-984bb069e00d.herokuapp.com/
 
-![Alt text](<assets/Pet Adoption site ss.png>)
+![Alt text](<assets/pet-adoption-ss.png>)
 
 ## Table of Contents
 
