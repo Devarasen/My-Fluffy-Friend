@@ -13,7 +13,7 @@ https://pet-adoption-984bb069e00d.herokuapp.com/
 - [Credits](#credits)
 - [Future Tech](#future-technologies)
 
-## Pet-Adoption-Project-2
+## My Floppy Friend
 
 Build a platform that connects animal shelters and rescue organizations with potential adopters. Users can search for pets, learn about their personalities, and apply for adoption.
 
@@ -59,8 +59,14 @@ Note: Additional user stories and features could be added to enhance the platfor
 - sequelize: "6.3.5"
 - Bootstrap: "4.5.2"
 
-# Future Technologies
+# Credits
 
+- Thiago
+- Dev
+- Martin
+- Marcelo
+
+# Future Technologies
 
 - Our Pet Adoption App, Created by Dev, Thiago, Marcelo, and Martin
 - After submitting the adoption application, I should receive an email confirmation acknowledging the submission, along with an estimated timeframe for a response from the animal shelter or rescue organization.
