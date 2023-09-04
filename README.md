@@ -13,7 +13,7 @@ https://pet-adoption-984bb069e00d.herokuapp.com/
 - [Credits](#credits)
 - [Future Tech](#future-technologies)
 
-## My Floppy Friend
+## My Fluffy Friend
 
 Build a platform that connects animal shelters and rescue organizations with potential adopters. Users can search for pets, learn about their personalities, and apply for adoption.
 
