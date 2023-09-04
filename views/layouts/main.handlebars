@@ -1,47 +1,12 @@
-{{!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>{{pageTitle}}</title>
-    <!-- <link rel="stylesheet" href="public/css/style.css"> -->
-</head>
-<body>
- 
-    <header>
-        {{> header}} 
-
-    <main>
-        {{{body}}} 
-    </main>
-
-    <footer>{{>footer}}
-
-    </footer>
-    
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Handlebars.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-    {{#if logged_in}}
-    <script src="./js/logout.js" async></script>
-    {{/if}}
-</body>
-
-
-
-</html> --}}
-
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>{{pageTitle}}</title>
+    <title>Pet Adoption</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
     <header>
         {{> header}}
@@ -65,7 +30,8 @@
     <!-- Handlebars.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
     {{#if logged_in}}
-    <script src="./js/logout.js" async></script>
+    <script src="./js/logout.js"></script>
     {{/if}}
 </body>
+
 </html>
