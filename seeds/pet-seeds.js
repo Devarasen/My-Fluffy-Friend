@@ -5,7 +5,7 @@ const petData = [
   {
     pet_name: "Bob",
     age: 3,
-    breed: "Staff",
+    breed: "Staffordshire Bull Terrier",
     category_id: 1,
     adoption_center_id: 1,
     image: "/images/Bob.jpeg",
