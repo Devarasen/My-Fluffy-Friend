@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html>
 <head>
     <title>{{pageTitle}}</title>
@@ -33,4 +33,39 @@
 
 
 
+</html> --}}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{pageTitle}}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        {{> header}}
+    </header>
+
+    <main class="container">
+        {{{body}}}
+    </main>
+
+    <!-- Bootstrap footer with fixed positioning -->
+    <footer class="footer bg-primary text-center py-3 text-white fixed-bottom">
+        <div class="container">
+            <p>&copy; {{getCurrentYear}} Our Pet Adoption App</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Handlebars.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    {{#if logged_in}}
+    <script src="./js/logout.js" async></script>
+    {{/if}}
+</body>
 </html>
